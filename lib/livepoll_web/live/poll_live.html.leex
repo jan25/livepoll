@@ -1,0 +1,9 @@
+<div>
+  <span>#<%= @code %></span>
+  <ul>
+    <%= for i <- 1..10 do %>
+    <li>question <%= i %> 10 upvotes</li>
+    <input type="button" value="<%= i %>" phx-click="upvote" />
+    <%= end %>
+  </ul>
+</div>

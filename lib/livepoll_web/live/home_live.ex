@@ -1,26 +1,12 @@
 defmodule LivepollWeb.HomeLive do
-  use LivepollWeb, :live_view
+  use Phoenix.LiveView
 
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, :counter, 0)}
+    {:ok, assign(socket, code: nil, stats: %{})}
   end
 
-  def handle_event("inc", _, socket) do
-    {:noreply, update(socket, :counter, &(&1 + 1))}
+  def handle_event("create", %{"code" => code}, socket) do
+    {:noreply, assign(socket, code: code)}
   end
 
-  def handle_event("dec", _, socket) do
-    {:noreply, update(socket, :counter, &(&1 - 1))}
-  end
-
-  def render(assigns) do
-    ~L"""
-    <div>
-      <button phx-click="dec">-</button>
-      <span><%= @counter %></span>
-      <button phx-click="inc">+</button>
-    </div>
-    """
-  end
-    
 end

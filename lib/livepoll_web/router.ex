@@ -17,8 +17,9 @@ defmodule LivepollWeb.Router do
   scope "/", LivepollWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
-    live "/counter", HomeLive, :index
+    live "/", HomeLive, :index
+    live "/poll/", PollLive, :index
+    live "/poll/:code", PollLive, :index
   end
 
   # Other scopes may use custom stacks.

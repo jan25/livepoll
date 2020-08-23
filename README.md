@@ -1,5 +1,7 @@
 # Livepoll
 
+This app is Work in Progress. Below are general instructions to run a phoenix app.
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
